@@ -31,7 +31,7 @@ Future<MqttClient> connect() async {
   }
 
   if (client.connectionStatus.state == MqttConnectionState.connected) {
-    print('EMQX client connected');
+    print('PiServer MQTT client connected');
     client.updates.listen((List<MqttReceivedMessage<MqttMessage>> c) {
       final MqttPublishMessage message = c[0].payload;
       final payload =
